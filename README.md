@@ -1,1 +1,4 @@
-esto es una cosa pa clase no se jaja saludos
+· Crear una nueva rama 
+·Modificar el app.py para que pida atributos "importantes"
+·Desplegar la app conn esta version (solo 11)
+·Probar el ejemplo de discord a ver si predice igual
