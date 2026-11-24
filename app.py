@@ -15,20 +15,12 @@ st.title("Predicción de Churn de Clientes")
 st.header("Introduce los datos del cliente:")
 
 contract = st.selectbox("Tipo de contrato", ["month-to-month", "one_year", "two_year"])
-dependents = st.selectbox("Dependientes", ["no", "yes"])
 device_protection = st.selectbox("Protección de dispositivos", ["no", "yes", "no_internet_service"])
-gender = st.selectbox("Género", ["female", "male"])
 internet_service = st.selectbox("Tipo de Internet", ["dsl", "fiber_optic", "no"])
 monthly_charges = st.number_input("Cargos mensuales", min_value=0.0, max_value=500.0, step=0.1)
-multiplelines = st.selectbox("Múltiples líneas", ["no", "no_phone_service", "yes"])
 online_backup = st.selectbox("Copia de seguridad online", ["no", "yes", "no_internet_service"])
 online_security = st.selectbox("Seguridad online", ["no", "yes", "no_internet_service"])
-paperless_billing = st.selectbox("Facturación sin papel", ["no", "yes"])
-partner = st.selectbox("Pareja", ["no", "yes"])
 payment_method = st.selectbox("Método de pago", ["bank_transfer_(automatic)", "credit_card_(automatic)", "electronic_check", "mailed_check"])
-phoneservice = st.selectbox("Servicio telefónico", ["no", "yes"])
-senior_citizen = st.selectbox("¿Es persona mayor?", ["no", "yes"])
-streaming_movies = st.selectbox("Películas en streaming", ["no", "yes", "no_internet_service"])
 streaming_tv = st.selectbox("Televisión en streaming", ["no", "yes", "no_internet_service"])
 tech_support = st.selectbox("Soporte técnico", ["no", "yes", "no_internet_service"])
 tenure = st.number_input("Antigüedad (meses)", min_value=0, max_value=100, step=1)
@@ -38,25 +30,25 @@ total_charges = st.number_input("Cargos totales", min_value=0.0, max_value=10000
 if st.button("Predecir"):
     # Crear un diccionario con los datos del cliente
     client_data = {
-        "contract": contract,
-        "dependents": dependents,
-        "deviceprotection": device_protection,
-        "gender": gender,
-        "internetservice": internet_service,
-        "monthlycharges": monthly_charges,
-        "multiplelines": multiplelines,
-        "onlinebackup": online_backup,
-        "onlinesecurity": online_security,
-        "paperlessbilling": paperless_billing,
-        "partner": partner,
-        "paymentmethod": payment_method,
-        "phoneservice": phoneservice,
-        "seniorcitizen": senior_citizen,
-        "streamingmovies": streaming_movies,
-        "streamingtv": streaming_tv,
-        "techsupport": tech_support,
-        "tenure": tenure,
-        "totalcharges": total_charges
+        "contract": contract,                   #1
+#       "dependents": dependents,               #11
+        "deviceprotection": device_protection,  #6
+#       "gender": gender,                       #16
+        "internetservice": internet_service,    #4
+        "monthlycharges": monthly_charges,      #este 100%
+#       "multiplelines": multiplelines,         #14
+        "onlinebackup": online_backup,          #5
+        "onlinesecurity": online_security,      #2
+#       "paperlessbilling": paperless_billing,  #10
+#       "partner": partner,                     #12
+        "paymentmethod": payment_method,        #7
+#       "phoneservice": phoneservice,           #15
+#       "seniorcitizen": senior_citizen,        #13
+#       "streamingmovies": streaming_movies,    #9
+        "streamingtv": streaming_tv,            #8
+        "techsupport": tech_support,            #3
+        "tenure": tenure,                       #este 100%
+        "totalcharges": total_charges           #este 100%
     }
 
     # Transformar los datos del cliente
